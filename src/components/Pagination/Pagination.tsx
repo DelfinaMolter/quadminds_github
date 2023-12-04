@@ -21,7 +21,7 @@ const Pagination = () => {
       <Button onClick={()=>handlePageChange(-1)} >
         <Arrow active={page > 1} className={'rotate-180'}/>
       </Button>
-      <p className="text-center">Paginación {page}&nbsp;/&nbsp;{totalPages}</p>
+      <p className="text-center">Paginación {page}&nbsp;<span className="text-gray-color">/&nbsp;{totalPages}</span></p>
       <Button  onClick={()=>handlePageChange(1)}>
         <Arrow active={page < totalPages}/>
       </Button>

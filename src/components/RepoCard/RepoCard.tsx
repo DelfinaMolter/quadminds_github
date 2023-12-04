@@ -44,12 +44,14 @@ const RepoCard: React.FC<RepoCardProps> = ({data, starred}) => {
   }
 
   return (
-    <div className="w-full flex  justify-between items-center py-3  border-b border-border-color">
+    <div className="w-full flex flex-col justify-between items-start py-3  border-b border-border-color sm:flex-row sm:items-center">
       <DetailRepo data={data}/>
-      <Button onClick={handleStar}>
-        <p className="font-semibold tracking-wider">{star? "Starred" :"Star"}</p>
-        <Star isFull={star }/>
-      </Button>
+      <div className="self-end">
+        <Button onClick={handleStar}>
+          <p className="font-semibold tracking-wider">{star? "Starred" :"Star"}</p>
+          <Star isFull={star }/>
+        </Button>
+      </div>
     </div>
 
   );

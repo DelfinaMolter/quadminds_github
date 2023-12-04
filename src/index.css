@@ -41,3 +41,19 @@ button:hover {
 }
 
 
+@keyframes loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading {
+    width: 25px;
+    margin: 40px auto;
+    animation: loading-spin infinite 0.5s linear;
+  }
+}

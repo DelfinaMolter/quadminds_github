@@ -8,6 +8,7 @@ import ListStarred from "../../services/listStarred";
 import Pagination from "../Pagination/Pagination";
 import {   Repository } from "../../interface/repos";
 import { AxiosError, AxiosResponse } from "axios";
+import Loading from "../Loading/Loading";
 
 
 function RepoBoxList() {
@@ -68,7 +69,7 @@ function RepoBoxList() {
     getRepos()
   },[ contextValues['query'], contextValues['page']])
 
-  if(loading) return <h1> Loading... </h1>
+  if(loading) return <Loading/>
 
   if(isErrorRepo) return <h1> Error al obtener los datos, inténtelo más tarde.</h1>
 
@@ -82,7 +83,7 @@ function RepoBoxList() {
           <Pagination/>
         </>
         :
-        <h1>No se encontraron repositorios.</h1>
+        <h3 className="my-10">No se encontraron repositorios, pruebe otra busqueda.</h3>
       }
 
     </div>
